@@ -19,41 +19,41 @@ const ExerciseDetail = () => {
   useEffect(() => {
     const getExerciseDetail = async () => {
       // Set URLs
-      const exerciseDbUrl =
-        "https://exercisedb.p.rapidapi.com/exercises/exercise";
+      const exerciseDbUrl = "https://exercisedb.p.rapidapi.com/exercises";
       const youtubeSearchUrl =
         "https://youtube-search-and-download.p.rapidapi.com";
 
       //  Get exercise Details
       const exerciseDetailData = await fetchData(
-        `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`,
+        `${exerciseDbUrl}/exercise/${id}`,
         exerciseOptions
       );
       setExerciseDetail(exerciseDetailData);
 
       // Get youtube similar videos
       const exercisesVideosData = await fetchData(
-        `https://youtube-search-and-download.p.rapidapi.com/search?query=${exerciseDetailData.name}`,
+        `${youtubeSearchUrl}/search?query=${exerciseDetailData.name}`,
         youtubeOptions
       );
       setExerciseVideos(exercisesVideosData.contents);
 
       //  Get target muscles exercise data
       const targetMuscleExercisesData = await fetchData(
-        `https://youtube-search-and-download.p.rapidapi.com/exercises/target/${exerciseDetailData.target}`,
+        `${exerciseDbUrl}/target/${exerciseDetailData.target}`,
         exerciseOptions
       );
       setTargetMuscleExercisesData(targetMuscleExercisesData);
 
       //  Get equipment exercise data
       const equipmentExercisesData = await fetchData(
-        `https://youtube-search-and-download.p.rapidapi.com/exercises/equipment/${exerciseDetailData.equipment}`,
+        `${exerciseDbUrl}/equipment/${exerciseDetailData.equipment}`,
         exerciseOptions
       );
       setEquipmentExercisesData(equipmentExercisesData);
     };
 
     getExerciseDetail();
+    // eslint-disable-next-line
   }, [id]);
 
   return (

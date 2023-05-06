@@ -7,7 +7,7 @@ import LeftArrowIcon from "../assets/icons/left-arrow.png";
 import ExerciseCard from "./ExerciseCard";
 
 const LeftArrow = () => {
-  const { scrollPrev, isFirstItemVisible } = useContext(VisibilityContext);
+  const { scrollPrev } = useContext(VisibilityContext);
 
   return (
     <Typography onClick={() => scrollPrev()} className="right-arrow">

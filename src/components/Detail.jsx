@@ -8,7 +8,6 @@ import targetImage from "../assets/icons/target.png";
 
 const Detail = () => {
   const { exerciseDetail } = useContext(BodyContext);
-  console.log(exerciseDetail);
   const { name, target, equipment, gifUrl, bodyPart } = exerciseDetail;
 
   const extraDetails = [

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import BodyContext from "../context/BodyContext";
 import { Stack, Box, Typography } from "@mui/material";
 import HorizontalScrollbar from "./HorizontalScrollbar";

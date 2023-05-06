@@ -15,7 +15,7 @@ const Exercises = () => {
       setExercises(allExercises);
     };
     getAllExercises();
-  }, []);
+  }, [setExercises]);
 
   const exercisesPerPage = 9;
   const indexOfLastExercise = currentPage * exercisesPerPage;
@@ -52,7 +52,7 @@ const Exercises = () => {
     };
 
     fetchExercisesData();
-  }, [bodyPart]);
+  }, [bodyPart, setExercises]);
 
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px", xs: "50px" }, p: "20px" }}>

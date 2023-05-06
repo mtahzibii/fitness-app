@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import BodyContext from "../context/BodyContext";
-import { Typography, Stack, Box, capitalize } from "@mui/material";
+import { Typography, Stack, Box } from "@mui/material";
 
 const ExerciseVideos = () => {
   const { exerciseVideos, exerciseDetail } = useContext(BodyContext);
   const { name } = exerciseDetail;
-
-  console.log(exerciseVideos);
 
   return (
     <Box
